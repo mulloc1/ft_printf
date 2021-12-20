@@ -1,0 +1,1 @@
+gcc libft/*.c *.c
