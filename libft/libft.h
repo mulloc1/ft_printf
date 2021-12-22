@@ -6,7 +6,7 @@
 /*   By: jaebae <jaebae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 11:51:45 by jaebae            #+#    #+#             */
-/*   Updated: 2021/12/07 12:36:46 by jaebae           ###   ########.fr       */
+/*   Updated: 2021/12/22 09:56:45 by jaebae           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
+size_t	ft_putchar_fd(char c, int fd);
+size_t	ft_putstr_fd(char *s, int fd);
+size_t	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int b, int fd);
 
 // BONUS

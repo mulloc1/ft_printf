@@ -6,7 +6,7 @@
 /*   By: jaebae <jaebae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 14:07:29 by jaebae            #+#    #+#             */
-/*   Updated: 2021/12/18 18:05:29 by jaebae           ###   ########.fr       */
+/*   Updated: 2021/12/22 09:42:16 by jaebae           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,18 @@
 
 void	d(va_list op, int *cnt)
 {
-	size_t	i;
 	char	*str;
 	int		num;
 
 	num = va_arg(op, int);
 	str = ft_itoa(num);
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		(*cnt)++;
-		i++;
-	}
+	(*cnt) += ft_putstr_fd(str, 1);
 	free(str);
 }
 
 void	c(va_list op, int *cnt)
 {
-	ft_putchar_fd(va_arg(op, int), 1);
-	(*cnt)++;
+	(*cnt) += ft_putchar_fd(va_arg(op, int), 1);
 }
 
 void	s(va_list op, int *cnt)
@@ -43,20 +35,15 @@ void	s(va_list op, int *cnt)
 
 	str = va_arg(op, char *);
 	if (str == NULL)
-	{
-		ft_putstr_fd("(null)", 1);
-		(*cnt) += 6;
-		return ;
-	}
-	(*cnt) += ft_strlen(str);
-	ft_putstr_fd(str, 1);
+		(*cnt) += ft_putstr_fd("(null)", 1);
+	else
+		(*cnt) += ft_putstr_fd(str, 1);
 }
 
 void	per(va_list op, int *cnt)
 {
 	op++;
-	ft_putchar_fd('%', 1);
-	*cnt += 1;
+	(*cnt) += ft_putchar_fd('%', 1);
 }
 
 void	u(va_list op, int *cnt)
@@ -75,10 +62,7 @@ void	u(va_list op, int *cnt)
 		num /= 10;
 	}
 	while (--i + 1 >= 1)
-	{
-		ft_putchar_fd(buf[i], 1);
-		(*cnt)++;
-	}
+		(*cnt) += ft_putchar_fd(buf[i], 1);
 	if (temp == *cnt)
 		*cnt += write(1, "0", 1);
 }

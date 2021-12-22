@@ -6,7 +6,7 @@
 /*   By: jaebae <jaebae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 19:34:37 by jaebae            #+#    #+#             */
-/*   Updated: 2021/11/24 10:10:06 by jaebae           ###   ########.fr       */
+/*   Updated: 2021/12/22 09:54:35 by jaebae           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ void	ft_putnbr_fd(int n, int fd)
 	if (temp == '-')
 		buf[i++] = temp;
 	buf[i] = '\0';
-	while (UINT_MAX - (--i) - 1 < UINT_MAX)
+	while (i + 1 >= 1)
 		write(fd, &buf[i], 1);
 }

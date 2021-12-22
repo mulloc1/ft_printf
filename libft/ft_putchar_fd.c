@@ -6,13 +6,13 @@
 /*   By: jaebae <jaebae@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 22:16:24 by jaebae            #+#    #+#             */
-/*   Updated: 2021/11/20 18:25:26 by jaebae           ###   ########.fr       */
+/*   Updated: 2021/12/22 09:39:15 by jaebae           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+size_t	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	return (write(fd, &c, 1));
 }
